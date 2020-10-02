@@ -1,0 +1,63 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  /* background: #3a6186; fallback for old browsers */
+  /* background: -webkit-linear-gradient(
+    to right,
+    #89253e,
+    #3a6186
+  );  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(
+    to right,
+    #89253e,
+    #3a6186
+  );  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background: url("./assets/image/background.jpg") no-repeat center fixed ;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: cover;
+  -o-background-size: cover;
+  /*background: #DCE35B;   fallback for old browsers 
+  background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6
+  background: linear-gradient(to right, #45B649, #DCE35B);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+button:focus {
+  outline: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#Modal__Body--open {
+  overflow-y: hidden;
+}
+
+.title {
+  font-family: 'MyFont';
+  font-size: 5rem;
+  color:  #16acc9 /*#3ccc3c*/;
+  -webkit-text-stroke: 2px #d2da4b  /*#a2e242*/;
+  
+  text-shadow:  black 2px 5px 5px;
+}
+
+#characters :hover {
+  transform: scale(1.1);
+}
+
+.custom {
+  font-family: 'MyFont';
+  
+  color: black
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: local('MyFont'), url(./Fonts/get_schwifty.ttf) format('truetype');
+}
