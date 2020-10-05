@@ -15,7 +15,7 @@
   height: 0;
   overflow: hidden;
   visibility: hidden;
-  content: ' ';
+  content: " ";
 }
 .rc-pagination-total-text {
   display: inline-block;
@@ -29,14 +29,16 @@
   min-width: 28px;
   height: 28px;
   margin-right: 8px;
+  padding-top: 1px;
+  font-size: 18px;
   font-family: Arial;
   line-height: 26px;
   text-align: center;
   vertical-align: middle;
   list-style: none;
-  background-color: #fff;
-  
-  border-radius: 2px;
+  background-color: transparent;
+  color: white;
+  border-radius: 50px;
   outline: 0;
   cursor: pointer;
   user-select: none;
@@ -52,28 +54,11 @@
 }
 .rc-pagination-item:focus,
 .rc-pagination-item:hover {
- 
   transition: all 0.3s;
 }
-.rc-pagination-item:focus a,
-.rc-pagination-item:hover a {
-  
-}
 .rc-pagination-item-active {
-  font-weight: 500;
   background: #fff;
-  background-color: #1890ff;
-}
-.rc-pagination-item-active a {
-  
-}
-.rc-pagination-item-active:focus,
-.rc-pagination-item-active:hover {
- 
-}
-.rc-pagination-item-active:focus a,
-.rc-pagination-item-active:hover a {
-  
+  background-color: #17a2b8;
 }
 .rc-pagination-jump-prev,
 .rc-pagination-jump-next {
@@ -89,7 +74,7 @@
 .rc-pagination-jump-prev button:after,
 .rc-pagination-jump-next button:after {
   display: block;
-  content: '•••';
+  content: "•••";
 }
 .rc-pagination-prev,
 .rc-pagination-jump-prev,
@@ -123,10 +108,6 @@
   cursor: pointer;
   user-select: none;
 }
-.rc-pagination-prev:hover button,
-.rc-pagination-next:hover button {
-
-}
 .rc-pagination-prev .rc-pagination-item-link,
 .rc-pagination-next .rc-pagination-item-link {
   display: flex;
@@ -134,12 +115,12 @@
   height: 100%;
   font-size: 30px;
   text-align: center;
-  background-color: #fff;
-  border: 1px solid #d9d9d9;
-  border-radius: 2px;
+  background-color: transparent;
+  color: #ffc107;
+  border-radius: 20px;
   outline: none;
   transition: all 0.3s;
-  align-items: center ;
+  align-items: center;
   padding-bottom: 15%;
   justify-content: center;
 }
@@ -147,15 +128,14 @@
 .rc-pagination-next:focus .rc-pagination-item-link,
 .rc-pagination-prev:hover .rc-pagination-item-link,
 .rc-pagination-next:hover .rc-pagination-item-link {
-  color: #1890ff;
-  
+  color: #17a2b8;
 }
 .rc-pagination-prev button:after {
-  content: '‹';
+  content: "‹";
   display: block;
 }
 .rc-pagination-next button:after {
-  content: '›';
+  content: "›";
   display: block;
 }
 .rc-pagination-disabled,
@@ -166,9 +146,8 @@
 .rc-pagination-disabled .rc-pagination-item-link,
 .rc-pagination-disabled:hover .rc-pagination-item-link,
 .rc-pagination-disabled:focus .rc-pagination-item-link {
-  color: rgba(0, 0, 0, 0.25);
-  
-  cursor: not-allowed;
+  color: #ffc107ad;
+  cursor: default;
 }
 .rc-pagination-slash {
   margin: 0 10px 0 5px;
@@ -227,7 +206,7 @@
   padding: 0 6px;
   text-align: center;
   background-color: #fff;
-  
+
   border-radius: 2px;
   outline: none;
   transition: border-color 0.3s;

@@ -2,7 +2,7 @@
 import React, { Fragment, useState } from "react";
 
 // COMPONENTS & STYLED
-import { Card } from "./styles";
+import { Card, Styles } from "./styles";
 import ModalCharacters from "./ModalCharacters";
 
 export interface Props {
@@ -34,7 +34,7 @@ const CardCharacters: React.SFC<Props> = ({
         disabled={isLocationsEpisodes}
         style={style}
       >
-        <div className="card rounded-lg w-100 shadow-sm py-2 px-2">
+        <div className="bg-warning pt-2 px-2" style={Styles.card}>
           <img
             src={image}
             className="card-img-top"

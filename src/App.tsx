@@ -68,7 +68,6 @@ function App() {
   } = useQuery<{ characters: Characters }>(CHARACTERS_QUERY, {
     variables: { page: currentPage, filter },
     skip: isCharacters,
-    onError: (error) => console.log("hola", error),
     fetchPolicy: "cache-and-network",
   });
 
@@ -125,7 +124,7 @@ function App() {
         <h2
           className="text-center"
           style={Styles.placeholder}
-        >{`No results where found for "${search}"`}</h2>
+        >{`No results were found for "${search}"`}</h2>
       );
     }
     return (
@@ -212,8 +211,6 @@ function App() {
     );
   };
 
-  console.log(data_episodes);
-
   return (
     <div className="App">
       <NavBar
@@ -231,7 +228,8 @@ function App() {
         {renderContent()}
       </MainContainer>
       <Pagination
-        className="d-flex justify-content-center fixed-bottom bg-dark py-2"
+        className="d-flex justify-content-center fixed-bottom py-2"
+        style={Styles.pagination}
         current={currentPage}
         total={pages * 10}
         onChange={(page) => setCurrentPage(page)}

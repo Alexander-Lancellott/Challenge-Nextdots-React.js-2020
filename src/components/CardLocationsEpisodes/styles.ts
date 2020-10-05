@@ -3,6 +3,9 @@ import styled from "@emotion/styled";
 export const Body = styled.div`
   padding-bottom: 3rem;
   padding-top: 2rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 2px 2px 5px black;
 `;
 
 export const Card = styled.button`
@@ -23,6 +26,5 @@ export const Card = styled.button`
 export const Styles: any = {
   attribute: {
     marginTop: "5.5rem",
-  }
-}
-
+  },
+};

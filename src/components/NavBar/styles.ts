@@ -36,7 +36,7 @@ export const Search = styled.div`
   outline: none;
   padding-left: 1rem;
   padding-right: 2rem;
-  width:  60%;
+  width: 60%;
 
   &:hover {
     box-shadow: 0 0 3pt 1pt #3ccc3c;
@@ -45,5 +45,15 @@ export const Search = styled.div`
 
 export const SwitchContainer = styled.div`
   margin-right: auto;
-  width:  6rem;
+  width: 6rem;
 `;
+
+export const Styles: any = {
+  filters: {
+    backgroundColor: "#371b0f",
+  },
+  navBar: {
+    backgroundColor: "#371b0f",
+    boxShadow: "0px -1px 9px black, 0px 3px 9px black",
+  },
+};

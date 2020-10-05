@@ -5,7 +5,14 @@ import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import React from "react";
 
 // COMPONENTS & STYLED
-import { ArrowBack, Button, Input, Search, SwitchContainer } from "./styles";
+import {
+  ArrowBack,
+  Button,
+  Input,
+  Search,
+  SwitchContainer,
+  Styles,
+} from "./styles";
 
 // ASSETS
 import { ArrowleftIcon, MagnifyingGlassIcon } from "../../assets";
@@ -48,7 +55,7 @@ const NavBar: React.SFC<Props> = ({
   return (
     <div className="fixed-top">
       <div className="panel-collapse collapse" id="navbarToggleExternalContent">
-        <div className="bg-dark pl-4 py-2">
+        <div className=" pl-4 py-2" style={Styles.filters}>
           <h5 className="text-warning h4">Filters</h5>
           <div className="btn-group btn-group-toggle" data-toggle="buttons">
             <label className="btn btn-info active">
@@ -85,7 +92,7 @@ const NavBar: React.SFC<Props> = ({
           </div>
         </div>
       </div>
-      <nav className="navbar navbar-dark bg-dark">
+      <nav className="navbar navbar-dark" style={Styles.navBar}>
         <Button className="navbar-toggler" type="button">
           <span className="navbar-toggler-icon"></span>
         </Button>
@@ -125,7 +132,7 @@ const NavBar: React.SFC<Props> = ({
             onlabel="Name"
             offlabel={episodesSwitch ? "Episode" : "Type"}
             onChange={(checked: boolean) => onSwitch(checked)}
-            onstyle= "outline-warning"
+            onstyle="outline-warning"
             offstyle="outline-info"
             // eslint-disable-next-line react/style-prop-object
             style="w-100"

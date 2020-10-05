@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import React from "react";
 
 // COMPONENTS & STYLED
-import { modalStyles } from "./styles"
+import { modalStyles, Styles } from "./styles";
 
 interface Props {
   openModal: boolean;
@@ -35,11 +35,7 @@ const ModalCharacters: React.SFC<Props> = ({
     >
       <div className="">
         <div className="pr-2 pb-3">
-          <button
-            type="button"
-            className="close"
-            onClick={closeModal}
-          >
+          <button type="button" className="close" onClick={closeModal}>
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -57,19 +53,27 @@ const ModalCharacters: React.SFC<Props> = ({
               id="exampleModalLabel"
             >
               Type:
-              <p className="custom pl-2 " style={{fontSize: "1rem" }}>{type === "" ? "..." : type}</p>
+              <p className="montserrat pl-2 " style={Styles.text}>
+                {type === "" ? "..." : type}
+              </p>
             </h6>
             <h6
               className="row modal-title font-weight-bold pt-3"
               id="exampleModalLabel"
             >
-              Gender:<p className="custom pl-2" style={{fontSize: "1rem" }}>{gender}</p>
+              Gender:
+              <p className="montserrat pl-2" style={Styles.text}>
+                {gender}
+              </p>
             </h6>
             <h6
               className="row modal-title font-weight-bold pt-3"
               id="exampleModalLabel"
             >
-              Species:<p className="custom pl-2" style={{fontSize: "1rem" }}>{species}</p>
+              Species:
+              <p className="montserrat pl-2" style={Styles.text}>
+                {species}
+              </p>
             </h6>
           </div>
         </div>

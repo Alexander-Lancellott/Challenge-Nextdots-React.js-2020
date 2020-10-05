@@ -2,7 +2,7 @@
 import React, { Fragment, useState } from "react";
 
 // COMPONENTS & STYLED
-import {Body, Card, Styles } from "./styles";
+import { Body, Card, Styles } from "./styles";
 import ModalLocationsEpisodes from "./ModalLocationsEpisodes";
 
 // TYPES
@@ -32,16 +32,12 @@ const CardCharacters: React.SFC<Props> = ({
   const [openModal, setOpenModal] = useState(false);
   return (
     <Fragment>
-      <Card
-        className="col-md-2"
-        data-toggle="modal"
-        onClick={() => setOpenModal(true)}
-      >
-        <Body className="card rounded-lg w-100">
+      <Card className="col-md-2" onClick={() => setOpenModal(true)}>
+        <Body className="bg-warning  w-100">
           <h5 className="card-title text-center px-2 custom">{name}</h5>
           <div className="card-body">
             <h6
-              className="card-subtitle text-center custom text-muted"
+              className="card-subtitle text-center montserrat text-muted"
               style={Styles.attribute}
             >
               {dimension || episode}

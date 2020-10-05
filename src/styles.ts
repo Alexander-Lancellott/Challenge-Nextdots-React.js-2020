@@ -18,4 +18,8 @@ export const Styles: any = {
     top: "50%",
     transform: "translate(-50%, -50%)",
   },
+  pagination: {
+    backgroundColor: "#371b0f",
+    boxShadow: "0px -1px 9px black",
+  },
 };
