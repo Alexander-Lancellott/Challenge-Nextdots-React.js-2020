@@ -28,7 +28,7 @@ export interface Props {
   value: string;
 }
 
-const NavBar: React.SFC<Props> = ({
+const NavBar = ({
   checked,
   episodesSwitch,
   filters,
@@ -37,18 +37,18 @@ const NavBar: React.SFC<Props> = ({
   onSwitch,
   search,
   value,
-}) => {
-  $(document).ready(function () {
-    $(".navbar-toggler").click(function () {
+}: Props ) => {
+  $(function () {
+    $(".navbar-toggler").on("click", function () {
       ($(".panel-collapse") as any).collapse("show");
     });
-    $(".navbar-toggler").click(function () {
+    $(".navbar-toggler").on("click", function () {
       ($(".panel-collapse") as any).collapse("hide");
     });
-    $("#collapseall").click(function () {
+    $("#collapseall").on("click", function () {
       ($(".panel-collapse") as any).collapse("hide");
     });
-    $(".btn-info").click(function () {
+    $(".btn-info").on("click", function () {
       ($(".panel-collapse") as any).collapse("hide");
     });
   });

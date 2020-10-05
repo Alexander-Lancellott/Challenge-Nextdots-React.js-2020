@@ -24,7 +24,7 @@ interface Props {
   type?: string;
 }
 
-const ModalLocationsEpisodes: React.SFC<Props> = ({
+const ModalLocationsEpisodes = ({
   airDate,
   characters,
   closeModal,
@@ -35,7 +35,7 @@ const ModalLocationsEpisodes: React.SFC<Props> = ({
   openModal,
   residents,
   type,
-}) => {
+}: Props ) => {
   const optionRender = () => {
     if (type === "") return "...";
     if (airDate) return airDate;

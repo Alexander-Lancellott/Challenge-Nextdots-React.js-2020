@@ -19,7 +19,7 @@ export interface Props {
   type?: string;
 }
 
-const CardCharacters: React.SFC<Props> = ({
+const CardCharacters = ({
   airDate,
   characters,
   dimension,
@@ -28,7 +28,7 @@ const CardCharacters: React.SFC<Props> = ({
   name,
   residents,
   type,
-}) => {
+}: Props ) => {
   const [openModal, setOpenModal] = useState(false);
   return (
     <Fragment>
