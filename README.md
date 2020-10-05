@@ -1,7 +1,6 @@
 # Challenge NextDots 2020 | Typescript | R 16.13.1
 
-<img src="https://github.com/Alexander-Lancellott/Challenge-Nextdots-ReactWeb-2020/blob/5b6d1eab5dafe17290e0f568b4ae831c1d97acba/src/assets/image/appPreview1.png" width="40%" title="appPreview1"/> <img src="https://github.com/Alexander-Lancellott/Challenge-Nextdots-ReactWeb-2020/blob/5b6d1eab5dafe17290e0f568b4ae831c1d97acba/src/assets/image/appPreview2.png" width="40%" title="appPreview2"/>
-
+<img src="https://github.com/Alexander-Lancellott/Challenge-Nextdots-ReactWeb-2020/blob/edd3b6c52b99f6860feea09baccbf4e9a337b013/src/assets/image/appPreview1.png" width="40%" title="appPreview1"/> <img src="https://github.com/Alexander-Lancellott/Challenge-Nextdots-ReactWeb-2020/blob/edd3b6c52b99f6860feea09baccbf4e9a337b013/src/assets/image/appPreview2.png" width="40%" title="appPreview2"/> <img src="https://github.com/Alexander-Lancellott/Challenge-Nextdots-ReactWeb-2020/blob/edd3b6c52b99f6860feea09baccbf4e9a337b013/src/assets/image/appPreview3.png" width="40%" title="appPreview3"/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
