@@ -8,8 +8,7 @@ import React, { useState, useEffect } from "react";
 // COMPONENTS & STYLED
 import "../../assets/styles/pagination.css";
 import {
-  CardCharacters,
-  CardLocationsEpisodes,
+  Cards,
   NavBar,
 } from "../../components";
 import { MainContainer, Styles } from "./styles";
@@ -143,12 +142,13 @@ const Welcome = () => {
       return data_characters?.characters.results.map(
         ({ id, name, type, gender, species, image }) => {
           return (
-            <CardCharacters
+            <Cards
               name={name}
               type={type}
               gender={gender}
               species={species}
               image={image}
+              isCharacters
               key={id}
             />
           );
@@ -159,7 +159,7 @@ const Welcome = () => {
       return data_locations?.locations.results.map(
         ({ id, name, type, dimension, residents }) => {
           return (
-            <CardLocationsEpisodes
+            <Cards
               key={id}
               name={name}
               type={type}
@@ -173,7 +173,7 @@ const Welcome = () => {
     return data_episodes?.episodes.results.map(
       ({ id, name, air_date, episode, characters }) => {
         return (
-          <CardLocationsEpisodes
+          <Cards
             key={id}
             name={name}
             airDate={air_date}

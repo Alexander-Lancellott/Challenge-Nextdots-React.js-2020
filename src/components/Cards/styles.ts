@@ -18,7 +18,7 @@ export const Card = styled.button`
   padding-top: 1.5rem;
   transition: transform 0.5s ease;
 
-  &:hover {
+  &:not(#disable):hover {
     transform: scale(1.1);
   }
 `;
@@ -26,5 +26,10 @@ export const Card = styled.button`
 export const Styles: any = {
   attribute: {
     marginTop: "5.5rem",
+  },
+  card: {
+    borderBottomLeftRadius: "20px",
+    borderBottomRightRadius: "20px",
+    boxShadow: "2px 2px 5px black",
   },
 };

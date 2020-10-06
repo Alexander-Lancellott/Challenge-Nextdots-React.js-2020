@@ -1,7 +1,4 @@
-export const modalStyles = {
-  overlay: {
-    backgroundColor: "#414141d0",
-  },
+export const alternativeModalStyles = {
   content: {
     backgroundColor: "#ffc107",
     border: "none",
@@ -14,6 +11,26 @@ export const modalStyles = {
     top: "50%",
     transform: "translate(-50%, -50%)",
     width: "55rem",
+  },
+  overlay: {
+    backgroundColor: "#414141d0",
+  },
+};
+
+export const modalStyles = {
+  content: {
+    backgroundColor: "#ffc107",
+    border: "none",
+    bottom: "auto",
+    left: "50%",
+    marginRight: "-50%",
+    padding: 0,
+    top: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "25rem",
+  },
+  overlay: {
+    backgroundColor: "#414141d0",
   },
 };
 
