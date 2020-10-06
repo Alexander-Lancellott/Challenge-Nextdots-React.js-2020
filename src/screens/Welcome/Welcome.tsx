@@ -7,14 +7,11 @@ import React, { useState, useEffect } from "react";
 
 // COMPONENTS & STYLED
 import "../../assets/styles/pagination.css";
-import {
-  Cards,
-  NavBar,
-} from "../../components";
+import { Cards, NavBar } from "../../components";
 import { MainContainer, Styles } from "./styles";
 
 // APOLLO
-import { useQuery } from "@apollo/client";
+import { ApolloError, useQuery } from "@apollo/client";
 import {
   CHARACTERS_QUERY,
   LOCATIONS_QUERY,
@@ -22,18 +19,20 @@ import {
 } from "../../apollo/queries";
 
 // TYPES
-import { Characters, Locations, Episodes } from "../../apollo/types";
+import {
+  Characters,
+  Filter,
+  FilterEpisode,
+  Locations,
+  Episodes,
+} from "../../apollo/types";
 
 const Welcome = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [filters, setFilters] = useState("Characters");
-  const [input, setInput] = useState("");
-  const [pages, setPages] = useState(1);
-  const [switchSearch, setSwitchSearch] = useState(true);
-
-  const searching = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
-  };
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [filters, setFilters] = useState<string>("Characters");
+  const [input, setInput] = useState<string>("");
+  const [pages, setPages] = useState<number>(1);
+  const [switchSearch, setSwitchSearch] = useState<boolean>(true);
 
   const handlerFilters = (
     e: React.MouseEvent<HTMLInputElement, MouseEvent>
@@ -43,26 +42,22 @@ const Welcome = () => {
     setSwitchSearch(true);
   };
 
-  const onReset = () => {
-    setInput("");
-  };
+  const search: string = input.trim();
 
-  const search = input.trim();
-
-  const filter = {
+  const filter: Filter = {
     name: switchSearch ? search : "",
     type: !switchSearch ? search : "",
   };
 
-  const filterEpisode = {
+  const filterEpisode: FilterEpisode = {
     name: switchSearch ? search : "",
     episode: !switchSearch ? search : "",
   };
 
-  const validation = search.length < 3;
-  const isCharacters = validation || filters !== "Characters";
-  const isLocations = validation || filters !== "Locations";
-  const isEpisodes = validation || filters !== "Episodes";
+  const validation: boolean = search.length < 3;
+  const isCharacters: boolean = validation || filters !== "Characters";
+  const isLocations: boolean = validation || filters !== "Locations";
+  const isEpisodes: boolean = validation || filters !== "Episodes";
 
   const {
     loading: loading_characters,
@@ -94,14 +89,15 @@ const Welcome = () => {
     fetchPolicy: "cache-and-network",
   });
 
-  const generalData =
+  const generalData: Characters | Locations | Episodes | undefined =
     data_characters?.characters ||
     data_locations?.locations ||
     data_episodes?.episodes;
 
-  const generalError = error_characters || error_locations || error_episodes;
+  const generalError: ApolloError | undefined =
+    error_characters || error_locations || error_episodes;
 
-  const generalLoading =
+  const generalLoading: boolean =
     loading_characters || loading_locations || loading_episodes;
 
   useEffect(() => {
@@ -118,7 +114,7 @@ const Welcome = () => {
     setCurrentPage(1);
   }, [search]);
 
-  const cardsCenter =
+  const cardsCenter: false | string =
     (generalData?.results.length || 0) < 5 && "justify-content-center";
 
   const errorContent = () => {
@@ -218,10 +214,12 @@ const Welcome = () => {
   return (
     <div className="App">
       <NavBar
-        search={searching}
+        search={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setInput(e.target.value)
+        }
         value={input}
         filters={handlerFilters}
-        onReset={onReset}
+        onReset={() => setInput("")}
         onSwitch={(checked: boolean) => setSwitchSearch(checked)}
         checked={switchSearch}
         episodesSwitch={filters === "Episodes"}

@@ -49,7 +49,7 @@ const Modals = ({
     if (airDate) return airDate;
     return type;
   };
-  const generalData = residents || characters;
+  const generalData: [Character] | undefined = residents || characters;
   return (
     <Modal
       isOpen={openModal}

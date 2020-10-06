@@ -1,3 +1,13 @@
+export interface Filter {
+  name: string;
+  type: string;
+}
+
+export interface FilterEpisode {
+  name: string;
+  episode: string;
+}
+
 export interface Character {
   id: number;
   name: string;
